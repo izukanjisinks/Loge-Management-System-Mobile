@@ -4,12 +4,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'core/mock/mock_auth_repository.dart';
 import 'core/mock/mock_booking_api.dart';
+import 'core/mock/mock_cleaner_rooms_api.dart';
 import 'core/mock/mock_requests_api.dart';
 import 'core/network/api_client.dart';
 import 'core/router/app_router.dart';
 import 'core/storage/secure_storage_service.dart';
 import 'core/theme/app_theme.dart';
 import 'features/auth/presentation/auth_providers.dart';
+import 'features/cleaner/dashboard/cleaner_rooms_providers.dart';
 import 'features/guest/dashboard/booking_providers.dart';
 import 'features/guest/requests/requests_providers.dart';
 
@@ -31,6 +33,7 @@ Future<void> main() async {
           authRepositoryProvider.overrideWithValue(MockAuthRepository()),
           bookingApiProvider.overrideWithValue(MockBookingApi()),
           requestsApiProvider.overrideWithValue(MockRequestsApi()),
+          cleanerRoomsApiProvider.overrideWithValue(MockCleanerRoomsApi()),
         ],
       ],
       child: const TimberLodgeApp(),

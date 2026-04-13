@@ -4,6 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../features/auth/domain/user_model.dart';
 import '../../features/auth/presentation/auth_providers.dart';
 import '../../features/auth/presentation/login_screen.dart';
+import '../../features/cleaner/checklist/cleaner_checklist_screen.dart';
+import '../../features/cleaner/dashboard/cleaner_dashboard_screen.dart';
+import '../../features/cleaner/dashboard/cleaner_room_model.dart';
 import '../../features/cleaner/dashboard/cleaner_shell.dart';
 import '../../features/guest/dashboard/guest_dashboard_screen.dart';
 import '../../features/guest/dashboard/guest_shell.dart';
@@ -31,13 +34,11 @@ final routerProvider = Provider<GoRouter>((ref) {
     redirect: (context, state) {
       final authAsync = ref.read(authNotifierProvider);
 
-      // Still restoring session — stay put
       if (authAsync.isLoading) return null;
 
       final authState = authAsync.valueOrNull;
       final isOnLogin = state.matchedLocation == RouteNames.login;
 
-      // No state or error → send to login
       if (authState == null || authAsync.hasError) {
         return isOnLogin ? null : RouteNames.login;
       }
@@ -46,15 +47,14 @@ final routerProvider = Provider<GoRouter>((ref) {
         initial: () => null,
         unauthenticated: () => isOnLogin ? null : RouteNames.login,
         authenticated: (user) {
-          // On login screen while authenticated → redirect to correct dashboard
           if (isOnLogin) {
             return user.role == UserRole.cleaner
                 ? RouteNames.cleanerDashboard
                 : RouteNames.guestDashboard;
           }
-          // Role boundary enforcement
           final onGuestRoute = state.matchedLocation.startsWith('/guest');
-          final onCleanerRoute = state.matchedLocation.startsWith('/cleaner');
+          final onCleanerRoute =
+              state.matchedLocation.startsWith('/cleaner');
           if (user.role == UserRole.cleaner && onGuestRoute) {
             return RouteNames.cleanerDashboard;
           }
@@ -70,6 +70,21 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: RouteNames.login,
         name: RouteNames.login,
         builder: (context, state) => const LoginScreen(),
+      ),
+
+      // Checklist sits outside the cleaner shell — slides over it full-screen
+      GoRoute(
+        path: RouteNames.cleanerChecklist,
+        name: RouteNames.cleanerChecklist,
+        redirect: (context, state) {
+          // extra is lost on hot restart or deep link — fall back to dashboard
+          if (state.extra is! CleanerRoom) return RouteNames.cleanerDashboard;
+          return null;
+        },
+        builder: (context, state) {
+          final room = state.extra! as CleanerRoom;
+          return CleanerChecklistScreen(room: room);
+        },
       ),
 
       // Guest shell
@@ -102,14 +117,7 @@ final routerProvider = Provider<GoRouter>((ref) {
           GoRoute(
             path: RouteNames.cleanerDashboard,
             name: RouteNames.cleanerDashboard,
-            builder: (context, state) =>
-                const _PlaceholderScreen('Cleaner Dashboard'),
-          ),
-          GoRoute(
-            path: RouteNames.cleanerChecklist,
-            name: RouteNames.cleanerChecklist,
-            builder: (context, state) =>
-                const _PlaceholderScreen('Cleaning Checklist'),
+            builder: (context, state) => const CleanerDashboardScreen(),
           ),
           GoRoute(
             path: RouteNames.cleanerSupplies,
@@ -129,7 +137,6 @@ final routerProvider = Provider<GoRouter>((ref) {
   );
 });
 
-// Bridges Riverpod auth state changes into go_router's Listenable refresh
 class _AuthStateListenable extends ChangeNotifier {
   _AuthStateListenable(Ref ref) {
     ref.listen(authNotifierProvider, (prev, next) => notifyListeners());
