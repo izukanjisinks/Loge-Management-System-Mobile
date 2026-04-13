@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../features/auth/domain/user_model.dart';
+import '../../features/auth/presentation/auth_providers.dart';
 import '../../features/auth/presentation/login_screen.dart';
+import '../../features/cleaner/dashboard/cleaner_shell.dart';
+import '../../features/guest/dashboard/guest_shell.dart';
 import 'route_names.dart';
 
-// Placeholder screens — replaced as each phase is built
 class _PlaceholderScreen extends StatelessWidget {
   const _PlaceholderScreen(this.label);
   final String label;
@@ -22,10 +25,43 @@ class _PlaceholderScreen extends StatelessWidget {
 final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
     initialLocation: RouteNames.login,
-    redirect: (context, state) async {
-      // Auth guard will be wired in Phase 1
-      // For now just allow all navigation
-      return null;
+    refreshListenable: _AuthStateListenable(ref),
+    redirect: (context, state) {
+      final authAsync = ref.read(authNotifierProvider);
+
+      // Still restoring session — stay put
+      if (authAsync.isLoading) return null;
+
+      final authState = authAsync.valueOrNull;
+      final isOnLogin = state.matchedLocation == RouteNames.login;
+
+      // No state or error → send to login
+      if (authState == null || authAsync.hasError) {
+        return isOnLogin ? null : RouteNames.login;
+      }
+
+      return authState.when(
+        initial: () => null,
+        unauthenticated: () => isOnLogin ? null : RouteNames.login,
+        authenticated: (user) {
+          // On login screen while authenticated → redirect to correct dashboard
+          if (isOnLogin) {
+            return user.role == UserRole.cleaner
+                ? RouteNames.cleanerDashboard
+                : RouteNames.guestDashboard;
+          }
+          // Role boundary enforcement
+          final onGuestRoute = state.matchedLocation.startsWith('/guest');
+          final onCleanerRoute = state.matchedLocation.startsWith('/cleaner');
+          if (user.role == UserRole.cleaner && onGuestRoute) {
+            return RouteNames.cleanerDashboard;
+          }
+          if (user.role == UserRole.guest && onCleanerRoute) {
+            return RouteNames.guestDashboard;
+          }
+          return null;
+        },
+      );
     },
     routes: [
       GoRoute(
@@ -36,7 +72,7 @@ final routerProvider = Provider<GoRouter>((ref) {
 
       // Guest shell
       ShellRoute(
-        builder: (context, state, child) => child,
+        builder: (context, state, child) => GuestShell(child: child),
         routes: [
           GoRoute(
             path: RouteNames.guestDashboard,
@@ -61,7 +97,7 @@ final routerProvider = Provider<GoRouter>((ref) {
 
       // Cleaner shell
       ShellRoute(
-        builder: (context, state, child) => child,
+        builder: (context, state, child) => CleanerShell(child: child),
         routes: [
           GoRoute(
             path: RouteNames.cleanerDashboard,
@@ -92,3 +128,10 @@ final routerProvider = Provider<GoRouter>((ref) {
     ],
   );
 });
+
+// Bridges Riverpod auth state changes into go_router's Listenable refresh
+class _AuthStateListenable extends ChangeNotifier {
+  _AuthStateListenable(Ref ref) {
+    ref.listen(authNotifierProvider, (prev, next) => notifyListeners());
+  }
+}

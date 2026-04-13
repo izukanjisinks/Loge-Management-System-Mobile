@@ -14,7 +14,7 @@ Future<void> main() async {
   runApp(
     ProviderScope(
       overrides: [
-        _storageProvider.overrideWithValue(
+        storageProvider.overrideWithValue(
           SecureStorageService(const FlutterSecureStorage()),
         ),
       ],
@@ -23,13 +23,13 @@ Future<void> main() async {
   );
 }
 
-// Top-level providers — consumed by ApiClient and router
-final _storageProvider = Provider<SecureStorageService>(
+// Top-level providers — consumed by features across the app
+final storageProvider = Provider<SecureStorageService>(
   (_) => throw UnimplementedError('overridden in main'),
 );
 
 final apiClientProvider = Provider<ApiClient>((ref) {
-  return ApiClient(ref.watch(_storageProvider));
+  return ApiClient(ref.watch(storageProvider));
 });
 
 class TimberLodgeApp extends ConsumerWidget {
