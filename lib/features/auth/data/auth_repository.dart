@@ -2,19 +2,20 @@ import '../../../core/storage/secure_storage_service.dart';
 import '../domain/user_model.dart';
 import 'auth_api.dart';
 
-class AuthRepository {
-  const AuthRepository({
-    required this.api,
-    required this.storage,
-  });
+abstract interface class AuthRepository {
+  Future<User> login({required String email, required String password});
+  Future<void> logout();
+  Future<User?> restoreSession();
+}
+
+class RemoteAuthRepository implements AuthRepository {
+  const RemoteAuthRepository({required this.api, required this.storage});
 
   final AuthApi api;
   final SecureStorageService storage;
 
-  Future<User> login({
-    required String email,
-    required String password,
-  }) async {
+  @override
+  Future<User> login({required String email, required String password}) async {
     final result = await api.login(email: email, password: password);
     await Future.wait([
       storage.writeToken(result.token),
@@ -25,12 +26,10 @@ class AuthRepository {
     return result.user;
   }
 
-  Future<void> logout() async {
-    await storage.clearAll();
-  }
+  @override
+  Future<void> logout() => storage.clearAll();
 
-  /// Restores session from secure storage on app start.
-  /// Returns null if no valid session exists.
+  @override
   Future<User?> restoreSession() async {
     final token = await storage.readToken();
     if (token == null) return null;
@@ -49,8 +48,6 @@ class AuthRepository {
       orElse: () => UserRole.guest,
     );
 
-    // We restore a minimal User from storage — email not cached,
-    // roomNumber will be fetched by the dashboard.
     return User(id: id, name: name, email: '', role: role);
   }
 }

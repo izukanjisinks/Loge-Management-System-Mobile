@@ -5,7 +5,9 @@ import '../../features/auth/domain/user_model.dart';
 import '../../features/auth/presentation/auth_providers.dart';
 import '../../features/auth/presentation/login_screen.dart';
 import '../../features/cleaner/dashboard/cleaner_shell.dart';
+import '../../features/guest/dashboard/guest_dashboard_screen.dart';
 import '../../features/guest/dashboard/guest_shell.dart';
+import '../../features/guest/requests/requests_screen.dart';
 import 'route_names.dart';
 
 class _PlaceholderScreen extends StatelessWidget {
@@ -77,14 +79,12 @@ final routerProvider = Provider<GoRouter>((ref) {
           GoRoute(
             path: RouteNames.guestDashboard,
             name: RouteNames.guestDashboard,
-            builder: (context, state) =>
-                const _PlaceholderScreen('Guest Dashboard'),
+            builder: (context, state) => const GuestDashboardScreen(),
           ),
           GoRoute(
             path: RouteNames.guestRequests,
             name: RouteNames.guestRequests,
-            builder: (context, state) =>
-                const _PlaceholderScreen('Room Service Requests'),
+            builder: (context, state) => const RequestsScreen(),
           ),
           GoRoute(
             path: RouteNames.guestRating,

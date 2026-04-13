@@ -10,7 +10,7 @@ final authApiProvider = Provider<AuthApi>((ref) {
 });
 
 final authRepositoryProvider = Provider<AuthRepository>((ref) {
-  return AuthRepository(
+  return RemoteAuthRepository(
     api: ref.watch(authApiProvider),
     storage: ref.watch(storageProvider),
   );
