@@ -1,0 +1,59 @@
+name: lodge_managment_system_mobile
+description: "The Timber Lodge — In-Stay Companion App for guests and cleaning staff."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+
+  # Routing
+  go_router: ^15.1.2
+
+  # Models
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
+
+  # Networking & storage
+  dio: ^5.8.0+1
+  flutter_secure_storage: ^9.2.4
+  flutter_dotenv: ^5.2.1
+
+  # UI & design
+  google_fonts: ^6.2.1
+  cached_network_image: ^3.4.1
+  gap: ^3.0.1
+  shimmer: ^3.0.0
+  flutter_svg: ^2.0.17
+
+  # Utilities
+  intl: ^0.20.2
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Code generation
+  build_runner: ^2.4.15
+  riverpod_generator: ^2.6.3
+  freezed: ^2.5.7
+  json_serializable: ^6.9.4
+
+  # Linting
+  flutter_lints: ^6.0.0
+  very_good_analysis: ^7.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - .env

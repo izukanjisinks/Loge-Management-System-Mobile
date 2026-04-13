@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#cae8e8",
+                        "inverse-primary": "#f4ba9c",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#022020",
+                        "inverse-surface": "#343027",
+                        "secondary": "#476363",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1f1b13",
+                        "error-container": "#ffdad6",
+                        "background": "#fff8f1",
+                        "outline-variant": "#d5c3ba",
+                        "primary": "#502c17",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#4a4641",
+                        "on-surface": "#1f1b13",
+                        "on-tertiary-container": "#c1bbb4",
+                        "on-primary-container": "#e9b093",
+                        "tertiary-fixed": "#e8e1da",
+                        "secondary-fixed-dim": "#aecccc",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#83746d",
+                        "surface-container-highest": "#eae1d4",
+                        "surface-tint": "#80543c",
+                        "tertiary": "#38352f",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#4c6868",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fff8f1",
+                        "on-primary-fixed": "#311302",
+                        "surface-container-low": "#fbf3e5",
+                        "inverse-on-surface": "#f8f0e2",
+                        "tertiary-container": "#4f4b46",
+                        "primary-fixed-dim": "#f4ba9c",
+                        "tertiary-fixed-dim": "#ccc6be",
+                        "primary-container": "#6b422b",
+                        "on-surface-variant": "#51443e",
+                        "surface-container": "#f5ede0",
+                        "on-secondary-fixed-variant": "#304b4c",
+                        "surface": "#fff8f1",
+                        "on-primary-fixed-variant": "#653d26",
+                        "surface-dim": "#e1d9cc",
+                        "primary-fixed": "#ffdbca",
+                        "secondary-container": "#c7e6e5",
+                        "on-tertiary-fixed": "#1e1b17",
+                        "surface-variant": "#eae1d4",
+                        "surface-container-high": "#efe7da"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #fff8f1;
+        }
+        .serif-text { font-family: 'Noto Serif', serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff8f1] dark:bg-stone-950 flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#502c17] dark:text-[#d7ccc8]" data-icon="menu">menu</span>
+</div>
+<h1 class="font-['Noto_Serif'] text-xl font-bold text-[#502c17] dark:text-[#d7ccc8]">The Timber Lodge</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest flex items-center justify-center">
+<img alt="Guest Profile Avatar" class="w-full h-full object-cover" data-alt="Close-up portrait of a relaxed man in a wool sweater with soft warm indoor cabin lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3BqYDM90ac__yAwJ9blVxxKnwOdtuhZy8KaxY2NiGfu0_Z4vji5qvUNll-p8fvkK_L1umtrQp37dXr6d8pfj1bzCWQD-J8czN0upZUfPPBxpoUhRw4nGlmdH4r-ocWvG-FQqT5KssTtpMXmGaQL-3zi_U2oDtZD3THCiK7d5wduKy1NcDxxVuwGzqrq5rA67OPJwQj6LHfuirOYsgRyW-gcQdOKHPxdt44yspyXV5KtoYuHA3YmEnOZ_aJK8_U-iDZLFC3NW6r0yp"/>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Personalised Greeting -->
+<section class="mb-10">
+<p class="font-label text-secondary font-medium tracking-widest uppercase text-xs mb-2">Welcome back, John!</p>
+<h2 class="serif-text text-4xl text-primary font-bold leading-tight">Your mountain sanctuary awaits.</h2>
+</section>
+<!-- Active Booking Card (Bento Grid Style) -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+<div class="md:col-span-2 relative h-64 rounded-xl overflow-hidden shadow-2xl shadow-primary/5 group">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Interior of a luxury timber cabin with warm fireplace glow, floor-to-ceiling windows showing pine forest and soft morning mist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuu7DupQ78kbe5v-6tQjk1mBPYl30PmbQgdfSd7qs71j9dbpw0HRoOiO8EY3aIkj2ZBaaiBmfFoE3Kq4KgTeHDF5Uj3cEXq77-2nPWZGWj-R7Bie-ATWxz9aTn7yHqwsXig_5Nwfj_j3_pAchqNQ8KQc6prYbDcHzAfTU8gzXB7aar2T7pohpeWYRZedOQJd5iFzGvuzX_fuwWylq6gkH7_jgFuskgz4fc5HEmK47E9Vfu28QwXM3RE7sY0lAZBgwdfkxA2woCGZpT"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="inline-block px-3 py-1 bg-secondary/80 backdrop-blur-md rounded-full text-[10px] font-bold tracking-widest uppercase mb-3">Currently Occupied</span>
+<h3 class="serif-text text-2xl font-bold">Cabin 01</h3>
+<p class="font-body text-sm opacity-90">Timber Ridge Estates • Forest View</p>
+</div>
+</div>
+<!-- Booking Details Card -->
+<div class="bg-surface-container-low rounded-xl p-6 flex flex-col justify-between">
+<div>
+<p class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold mb-4">Dates</p>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_today">calendar_today</span>
+<span class="font-body font-semibold text-primary">Oct 12 — Oct 18</span>
+</div>
+</div>
+<div class="mt-6">
+<p class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold mb-4">Plan</p>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="restaurant_menu">restaurant_menu</span>
+<span class="font-body font-semibold text-primary">Full Board</span>
+</div>
+</div>
+</div>
+<!-- Key Card Logic -->
+<div class="bg-primary rounded-xl p-6 flex flex-col items-center justify-center text-center text-on-primary">
+<span class="material-symbols-outlined text-4xl mb-2" data-icon="contactless">contactless</span>
+<p class="font-headline text-lg font-bold">Digital Key</p>
+<p class="font-body text-xs opacity-70 mt-1">Tap to unlock cabin door</p>
+</div>
+</section>
+<!-- Quick Actions -->
+<section class="mb-12">
+<h4 class="serif-text text-xl font-bold text-primary mb-4">Guest Services</h4>
+<div class="grid grid-cols-1 gap-3">
+<!-- Make a Request -->
+<button class="flex items-center justify-between p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/15 hover:bg-surface-container-high transition-colors text-left group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="concierge">concierge</span>
+</div>
+<div>
+<span class="block font-body font-bold text-primary">Make a Request</span>
+<span class="block text-xs text-secondary">Extra towels, firewood, or room service</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Rate Your Stay -->
+<button class="flex items-center justify-between p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/15 hover:bg-surface-container-high transition-colors text-left group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+</div>
+<div>
+<span class="block font-body font-bold text-primary">Rate Your Stay</span>
+<span class="block text-xs text-secondary">How are we doing so far?</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- View Invoice -->
+<button class="flex items-center justify-between p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/15 hover:bg-surface-container-high transition-colors text-left group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+</div>
+<div>
+<span class="block font-body font-bold text-primary">View Invoice</span>
+<span class="block text-xs text-secondary">Review your recent charges</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Contextual Recommendation (Asymmetric/Editorial) -->
+<section class="relative bg-secondary rounded-2xl p-8 overflow-hidden">
+<div class="relative z-10 w-2/3">
+<p class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary-fixed mb-2">Afternoon Suggestion</p>
+<h3 class="serif-text text-2xl font-bold text-white mb-4">Traditional Finnish Sauna Experience</h3>
+<button class="bg-white text-primary px-6 py-2.5 rounded-lg font-body font-bold text-sm hover:scale-95 transition-transform">Book a Slot</button>
+</div>
+<div class="absolute -right-12 -top-12 w-48 h-48 opacity-20">
+<span class="material-symbols-outlined text-[180px] text-white" data-icon="spa">spa</span>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 mx-4 mb-6 rounded-2xl overflow-hidden bg-[#fff8f1]/80 dark:bg-stone-950/80 backdrop-blur-xl z-50 flex justify-around items-center p-2 shadow-2xl shadow-[#502c17]/5 border border-[#502c17]/10 dark:border-white/5">
+<!-- Stay (Active) -->
+<a class="flex flex-col items-center justify-center bg-[#502c17] text-[#fff8f1] rounded-xl px-4 py-2 scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="bedroom_parent" style="font-variation-settings: 'FILL' 1;">bedroom_parent</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold mt-1">Stay</span>
+</a>
+<!-- Dining -->
+<a class="flex flex-col items-center justify-center text-[#476363] dark:text-stone-400 px-4 py-2 hover:text-[#502c17] dark:hover:text-white" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold mt-1">Dining</span>
+</a>
+<!-- Tasks -->
+<a class="flex flex-col items-center justify-center text-[#476363] dark:text-stone-400 px-4 py-2 hover:text-[#502c17] dark:hover:text-white" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold mt-1">Tasks</span>
+</a>
+<!-- Concierge -->
+<a class="flex flex-col items-center justify-center text-[#476363] dark:text-stone-400 px-4 py-2 hover:text-[#502c17] dark:hover:text-white" href="#">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold mt-1">Concierge</span>
+</a>
+</nav>
+</body></html>

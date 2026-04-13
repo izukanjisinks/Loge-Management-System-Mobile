@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Room Service Requests - The Timber Lodge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#cae8e8",
+                    "inverse-primary": "#f4ba9c",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#022020",
+                    "inverse-surface": "#343027",
+                    "secondary": "#476363",
+                    "on-primary": "#ffffff",
+                    "on-background": "#1f1b13",
+                    "error-container": "#ffdad6",
+                    "background": "#fff8f1",
+                    "outline-variant": "#d5c3ba",
+                    "primary": "#502c17",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#4a4641",
+                    "on-surface": "#1f1b13",
+                    "on-tertiary-container": "#c1bbb4",
+                    "on-primary-container": "#e9b093",
+                    "tertiary-fixed": "#e8e1da",
+                    "secondary-fixed-dim": "#aecccc",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#83746d",
+                    "surface-container-highest": "#eae1d4",
+                    "surface-tint": "#80543c",
+                    "tertiary": "#38352f",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#4c6868",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#fff8f1",
+                    "on-primary-fixed": "#311302",
+                    "surface-container-low": "#fbf3e5",
+                    "inverse-on-surface": "#f8f0e2",
+                    "tertiary-container": "#4f4b46",
+                    "primary-fixed-dim": "#f4ba9c",
+                    "tertiary-fixed-dim": "#ccc6be",
+                    "primary-container": "#6b422b",
+                    "on-surface-variant": "#51443e",
+                    "surface-container": "#f5ede0",
+                    "on-secondary-fixed-variant": "#304b4c",
+                    "surface": "#fff8f1",
+                    "on-primary-fixed-variant": "#653d26",
+                    "surface-dim": "#e1d9cc",
+                    "primary-fixed": "#ffdbca",
+                    "secondary-container": "#c7e6e5",
+                    "on-tertiary-fixed": "#1e1b17",
+                    "surface-variant": "#eae1d4",
+                    "surface-container-high": "#efe7da"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3 { font-family: 'Noto Serif', serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf3e5] dark:bg-stone-900 flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#502c17] dark:text-[#d7ccc8]">menu</span>
+<h1 class="font-['Noto_Serif'] text-xl font-bold text-[#502c17] dark:text-[#d7ccc8]">The Timber Lodge</h1>
+</div>
+<div class="h-10 w-10 rounded-full bg-surface-container-highest overflow-hidden border border-primary/10">
+<img alt="Guest Profile Avatar" class="h-full w-full object-cover" data-alt="close up portrait of a middle aged man with a friendly expression in soft natural indoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkGnKkNyMDt2CB8-p4ZbbljafPgGfn-N2qEgFEc9v_irMT9cbwZiXH9bYmhti74phntEqXTflsbrl6M-AV189DYMaql2oOp1abT-aAZm65kMoSIt-SAgiXyK_Sb-gQYECj8cHBJWh99etdXCRwtMGy7WcySf87SGENPSKtbkUwIsgYR2dNAZcYcrOJ75YQTyVbx0DO-UDqAr41GgvTNDYayTu1xHzohuqTsC9DxoWpstsoKhqd5puFyTKplDDJ3fp8ZH01Cz_N9-56"/>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Welcome Section -->
+<section class="mb-10">
+<span class="text-secondary font-bold tracking-widest uppercase text-[10px] mb-2 block">Guest Services</span>
+<h2 class="text-3xl font-bold text-primary mb-2">Request Assistance</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed">How can we make your stay more comfortable today?</p>
+</section>
+<!-- Quick Categories Bento -->
+<section class="grid grid-cols-2 gap-4 mb-12">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 flex flex-col items-center text-center group cursor-pointer hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-4 text-secondary">
+<span class="material-symbols-outlined">cleaning_services</span>
+</div>
+<span class="font-bold text-sm text-primary">Housekeeping</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 flex flex-col items-center text-center group cursor-pointer hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-4 text-secondary">
+<span class="material-symbols-outlined">handyman</span>
+</div>
+<span class="font-bold text-sm text-primary">Maintenance</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 flex flex-col items-center text-center group cursor-pointer hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-4 text-secondary">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<span class="font-bold text-sm text-primary">Food &amp; Beverage</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 flex flex-col items-center text-center group cursor-pointer hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-4 text-secondary">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<span class="font-bold text-sm text-primary">Concierge</span>
+</div>
+</section>
+<!-- New Request Form -->
+<section class="bg-surface-container-low rounded-2xl p-8 mb-12 relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="text-xl font-bold text-primary mb-6">New Request</h3>
+<div class="space-y-6">
+<div class="relative">
+<label class="text-[10px] uppercase tracking-widest font-extrabold text-secondary mb-2 block">Tell us what you need</label>
+<textarea class="w-full bg-transparent border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 text-on-surface placeholder-on-surface-variant/50 transition-all resize-none" placeholder="Ex: Please bring extra towels to Room 304..." rows="3"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary font-bold py-4 rounded-xl shadow-lg shadow-primary/20 hover:opacity-90 active:scale-[0.98] transition-all">
+                        Submit Request
+                    </button>
+</div>
+</div>
+<!-- Decorative texture background -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#502c17 1px, transparent 0); background-size: 20px 20px;"></div>
+</section>
+<!-- Active Requests -->
+<section>
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-bold text-primary">Active Requests</h3>
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest bg-secondary-container px-3 py-1 rounded-full">3 Active</span>
+</div>
+<div class="space-y-4">
+<!-- Request Item 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<span class="font-bold text-primary">Late Night Snack Service</span>
+<span class="text-[10px] font-bold py-1 px-2 rounded bg-amber-100 text-amber-800 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">schedule</span> Pending
+                            </span>
+</div>
+<p class="text-sm text-on-surface-variant mb-2">Artisan cheese platter and one bottle of sparkling water for 2 guests.</p>
+<span class="text-[10px] text-outline uppercase font-bold">12:45 PM • Room 304</span>
+</div>
+</div>
+<!-- Request Item 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined">cleaning_services</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<span class="font-bold text-primary">Extra Down Pillows</span>
+<span class="text-[10px] font-bold py-1 px-2 rounded bg-blue-100 text-blue-800 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">sync</span> In Progress
+                            </span>
+</div>
+<p class="text-sm text-on-surface-variant mb-2">Two additional firm down pillows requested for the master suite.</p>
+<span class="text-[10px] text-outline uppercase font-bold">11:20 AM • Room 304</span>
+</div>
+</div>
+<!-- Request Item 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm flex items-start gap-4 opacity-70">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined">handyman</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<span class="font-bold text-primary">Fireplace Inspection</span>
+<span class="text-[10px] font-bold py-1 px-2 rounded bg-green-100 text-green-800 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> Resolved
+                            </span>
+</div>
+<p class="text-sm text-on-surface-variant mb-2">Ventilation check completed. Safety pilot light relit.</p>
+<span class="text-[10px] text-outline uppercase font-bold">09:15 AM • Room 304</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 mx-4 mb-6 rounded-2xl overflow-hidden bg-[#fff8f1]/80 dark:bg-stone-950/80 backdrop-blur-xl z-50 flex justify-around items-center p-2 shadow-2xl shadow-[#502c17]/5 border border-[#502c17]/10 dark:border-white/5">
+<a class="flex flex-col items-center justify-center text-[#476363] dark:text-stone-400 px-4 py-2 hover:text-[#502c17] dark:hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined mb-1">bedroom_parent</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold">Stay</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#476363] dark:text-stone-400 px-4 py-2 hover:text-[#502c17] dark:hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined mb-1">restaurant</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold">Dining</span>
+</a>
+<!-- ACTIVE TAB: Tasks -->
+<a class="flex flex-col items-center justify-center bg-[#502c17] text-[#fff8f1] rounded-xl px-4 py-2 scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">assignment_turned_in</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#476363] dark:text-stone-400 px-4 py-2 hover:text-[#502c17] dark:hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined mb-1">support_agent</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold">Concierge</span>
+</a>
+</nav>
+</body></html>

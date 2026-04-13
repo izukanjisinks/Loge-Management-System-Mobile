@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Room Cleaning Checklist - The Timber Lodge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#cae8e8",
+                        "inverse-primary": "#f4ba9c",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#022020",
+                        "inverse-surface": "#343027",
+                        "secondary": "#476363",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1f1b13",
+                        "error-container": "#ffdad6",
+                        "background": "#fff8f1",
+                        "outline-variant": "#d5c3ba",
+                        "primary": "#502c17",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#4a4641",
+                        "on-surface": "#1f1b13",
+                        "on-tertiary-container": "#c1bbb4",
+                        "on-primary-container": "#e9b093",
+                        "tertiary-fixed": "#e8e1da",
+                        "secondary-fixed-dim": "#aecccc",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#83746d",
+                        "surface-container-highest": "#eae1d4",
+                        "surface-tint": "#80543c",
+                        "tertiary": "#38352f",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#4c6868",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fff8f1",
+                        "on-primary-fixed": "#311302",
+                        "surface-container-low": "#fbf3e5",
+                        "inverse-on-surface": "#f8f0e2",
+                        "tertiary-container": "#4f4b46",
+                        "primary-fixed-dim": "#f4ba9c",
+                        "tertiary-fixed-dim": "#ccc6be",
+                        "primary-container": "#6b422b",
+                        "on-surface-variant": "#51443e",
+                        "surface-container": "#f5ede0",
+                        "on-secondary-fixed-variant": "#304b4c",
+                        "surface": "#fff8f1",
+                        "on-primary-fixed-variant": "#653d26",
+                        "surface-dim": "#e1d9cc",
+                        "primary-fixed": "#ffdbca",
+                        "secondary-container": "#c7e6e5",
+                        "on-tertiary-fixed": "#1e1b17",
+                        "surface-variant": "#eae1d4",
+                        "surface-container-high": "#efe7da"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #fff8f1; color: #1f1b13; }
+        .font-serif { font-family: 'Noto Serif', serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff8f1] dark:bg-stone-950 flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#502c17] dark:text-[#d7ccc8]" data-icon="menu">menu</span>
+<h1 class="font-['Noto_Serif'] text-xl font-bold text-[#502c17] dark:text-[#d7ccc8] tracking-tight">The Timber Lodge</h1>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/20">
+<img alt="Guest Profile Avatar" class="w-full h-full object-cover" data-alt="Professional headshot of a hotel staff member in a clean uniform with a friendly expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9pB2RHx-F9LFzIZXY8I7lksO4B-TtmnfIVfDkEIBY6d2eZIwjVs8rxURzbQNO_YDMeNAS9xVUiD2p6c4_MnXIcpprm863ZQ7VbSSGGi7hkdWvP1ZTRvg-U0TtsY1jbAN9cXt2NicmJmBshQLAxLT4jnvPPijMpXycvvw8lyTk69jADKytE1PnpClAXtwu00FF91IIqca4PLdvveQdQbHyhIFkeKxQKWFqR63vXqAYToz1aNydQ4EnZKmbgSEvs1xaRWSgt25iURoe"/>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Room Status Header -->
+<section class="mb-8">
+<div class="flex items-baseline justify-between mb-2">
+<h2 class="font-serif text-3xl font-bold text-primary">Cabin 01</h2>
+<span class="font-label text-xs font-extrabold uppercase tracking-widest text-secondary">Luxury Suite</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-5 border-l-4 border-primary/20">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5" data-icon="priority_high">priority_high</span>
+<div>
+<p class="font-label text-xs font-bold uppercase tracking-wider text-primary mb-1">Guest Special Notes</p>
+<p class="text-on-surface font-medium leading-relaxed">Allergic to feather pillows. Please ensure hypoallergenic linens are used throughout.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Progress Indicator -->
+<section class="mb-10">
+<div class="flex justify-between items-center mb-3">
+<span class="font-label text-sm font-bold text-on-surface-variant">Cleaning Progress</span>
+<span class="font-label text-sm font-extrabold text-primary">4 of 7 tasks</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[57%] rounded-full"></div>
+</div>
+</section>
+<!-- Checklist -->
+<section class="space-y-4">
+<!-- Bed Item (Checked) -->
+<label class="group flex items-center justify-between p-5 bg-surface-container-lowest rounded-xl shadow-sm cursor-pointer transition-all active:scale-[0.98]">
+<div class="flex items-center gap-4">
+<div class="w-6 h-6 rounded-md border-2 border-primary bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body text-md font-semibold text-on-surface/50 line-through">Bed made &amp; linens changed</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="bed">bed</span>
+<input checked="" class="hidden" type="checkbox"/>
+</label>
+<!-- Bathroom Item (Checked) -->
+<label class="group flex items-center justify-between p-5 bg-surface-container-lowest rounded-xl shadow-sm cursor-pointer transition-all active:scale-[0.98]">
+<div class="flex items-center gap-4">
+<div class="w-6 h-6 rounded-md border-2 border-primary bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body text-md font-semibold text-on-surface/50 line-through">Bathroom sanitised</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="sanitizer">sanitizer</span>
+<input checked="" class="hidden" type="checkbox"/>
+</label>
+<!-- Floors (Unchecked) -->
+<label class="group flex items-center justify-between p-5 bg-surface-container-lowest rounded-xl shadow-sm cursor-pointer transition-all active:scale-[0.98] border border-transparent hover:border-primary/10">
+<div class="flex items-center gap-4">
+<div class="w-6 h-6 rounded-md border-2 border-outline-variant group-hover:border-primary transition-colors"></div>
+<span class="font-body text-md font-semibold text-on-surface">Floors swept &amp; mopped</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="mop">mop</span>
+<input class="hidden" type="checkbox"/>
+</label>
+<!-- Minibar (Checked) -->
+<label class="group flex items-center justify-between p-5 bg-surface-container-lowest rounded-xl shadow-sm cursor-pointer transition-all active:scale-[0.98]">
+<div class="flex items-center gap-4">
+<div class="w-6 h-6 rounded-md border-2 border-primary bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body text-md font-semibold text-on-surface/50 line-through">Minibar restocked</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="kitchen">kitchen</span>
+<input checked="" class="hidden" type="checkbox"/>
+</label>
+<!-- Amenities (Unchecked) -->
+<label class="group flex items-center justify-between p-5 bg-surface-container-lowest rounded-xl shadow-sm cursor-pointer transition-all active:scale-[0.98] border border-transparent hover:border-primary/10">
+<div class="flex items-center gap-4">
+<div class="w-6 h-6 rounded-md border-2 border-outline-variant group-hover:border-primary transition-colors"></div>
+<span class="font-body text-md font-semibold text-on-surface">Towels &amp; robes replaced</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="dry_cleaning">dry_cleaning</span>
+<input class="hidden" type="checkbox"/>
+</label>
+<!-- Dusting (Unchecked) -->
+<label class="group flex items-center justify-between p-5 bg-surface-container-lowest rounded-xl shadow-sm cursor-pointer transition-all active:scale-[0.98] border border-transparent hover:border-primary/10">
+<div class="flex items-center gap-4">
+<div class="w-6 h-6 rounded-md border-2 border-outline-variant group-hover:border-primary transition-colors"></div>
+<span class="font-body text-md font-semibold text-on-surface">Dusting &amp; surfaces wiped</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="cleaning_services">cleaning_services</span>
+<input class="hidden" type="checkbox"/>
+</label>
+<!-- Windows (Checked) -->
+<label class="group flex items-center justify-between p-5 bg-surface-container-lowest rounded-xl shadow-sm cursor-pointer transition-all active:scale-[0.98]">
+<div class="flex items-center gap-4">
+<div class="w-6 h-6 rounded-md border-2 border-primary bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body text-md font-semibold text-on-surface/50 line-through">Windows &amp; mirrors polished</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="window">window</span>
+<input checked="" class="hidden" type="checkbox"/>
+</label>
+</section>
+<!-- Action Button -->
+<div class="mt-12 mb-20">
+<button class="w-full bg-primary/20 text-on-surface-variant font-bold py-5 rounded-xl flex items-center justify-center gap-2 cursor-not-allowed opacity-60">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+                Mark as Clean
+            </button>
+<p class="text-center text-xs font-bold text-outline uppercase tracking-widest mt-4">Complete all tasks to submit</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 mx-4 mb-6 rounded-2xl overflow-hidden bg-[#fff8f1]/80 dark:bg-stone-950/80 backdrop-blur-xl z-50 flex justify-around items-center p-2 shadow-2xl shadow-[#502c17]/5 border border-[#502c17]/10 dark:border-white/5">
+<a class="flex flex-col items-center justify-center text-[#476363] dark:text-stone-400 px-4 py-2 hover:text-[#502c17] dark:hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="bedroom_parent">bedroom_parent</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold mt-1">Stay</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#476363] dark:text-stone-400 px-4 py-2 hover:text-[#502c17] dark:hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold mt-1">Dining</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#502c17] text-[#fff8f1] rounded-xl px-4 py-2 scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in" style="font-variation-settings: 'FILL' 1;">assignment_turned_in</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold mt-1">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#476363] dark:text-stone-400 px-4 py-2 hover:text-[#502c17] dark:hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold mt-1">Concierge</span>
+</a>
+</nav>
+</body></html>
